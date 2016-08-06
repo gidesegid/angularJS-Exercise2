@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+	<script src="controller.js"></script>
+      <link rel="stylesheet" href="main.css">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+       <!-- Optional theme -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+</head>
+<body ng-app="mainApp">
+
+      <h1>Music lab</h1>
+      <div ng-controller="ctrlmusic">
+            
+                Search : <input type="text" ng-model="searchText" placeholder="Search for a music">
+                <button class=btn-primary>Search</button> 
+                <!--<div actor-Title></div>-->
+            
+
+            <div class="row">
+                  
+                       <ul>
+                              <li ng-repeat="music in musics | filter:searchText">
+                                    <!--<div class="col-xs-6 col-md-3">-->
+                                           <!--<a href="#" class="thumbnail">
+                                             <img ng-src="{{music.Poster}}" with='384' height='288'>
+                                           </a>-->
+                                           <div class="panel panel-primary">
+                                            <div class="panel-heading"><h3>{{music.Title}}</h3></div>
+                                            <div class="panel-body">
+                                          <div>
+                                               <img ng-src="{{music.Poster}}" with='100'> 
+                                          
+                                          
+                                          <p ng-model="musics"><label>Title :</label>{{music.Title}}</p>
+                                          <p ng-model="musics"><label>Year: </label>{{music.Year}}</p>
+                                          <p ng-model="musics"><label>Released :</label>{{music.Released}}</p>
+                                          <p ng-model="musics"><label>Director:</label> {{music.Director}}</p>
+                                          <p ng-model="musics"><label>Writer :</label>{{music.Writer}}</p>
+                                          <p ng-model="musics"><label>Actors :</label>{{music.Actors}}</p>
+                                          
+                                          </div>
+                                          </div>
+                                    <!--</div>-->
+                              </li>
+                        </ul>
+                  
+          </div>
+      </div>
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
